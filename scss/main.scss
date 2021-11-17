@@ -1,0 +1,77 @@
+$cyan: hsl(185, 75%, 39%);
+$dark-blue: hsl(229, 23%, 23%);
+$gray-blue: hsl(227, 10%, 46%);
+$gray: hsl(0, 0%, 59%);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 18px;
+  color: $dark-blue;
+}
+
+body {
+  background-color: $cyan;
+}
+
+.wrapper {
+  padding: 20px;
+  margin-inline: auto;
+  max-width: 400px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.light {
+  color: $gray-blue;
+}
+
+.card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  &__header {
+    background-image: url("../images/bg-pattern-card.svg");
+    position: relative;
+    min-height: 200px;
+  }
+
+  &__image {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 4px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      transform: scale(1.06) translateY(1px);
+    }
+  }
+
+  &__info {
+    padding-top: 70px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $gray;
+  }
+
+  &__stats {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
