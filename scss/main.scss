@@ -19,12 +19,59 @@ html {
 
 body {
   background-color: $cyan;
+  overflow: hidden;
+  position: relative;
+
+  main {
+    overflow: hidden;
+
+    .top,
+    .bottom {
+      position: absolute;
+      overflow: hidden;
+      width: 140vw;
+
+      @media (min-width: 600px) {
+        width: 1000px;
+      }
+    }
+
+    .top {
+      top: 0;
+      left: 50%;
+      transform: translateX(-95%) translateY(-55%);
+
+      @media (min-width: 600px) {
+        transform: translateX(-100%) translateY(-55%);
+      }
+    }
+
+    .bottom {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-20px) translateY(-40%);
+
+      @media (min-width: 600px) {
+        transform: translateX(-20px) translateY(-25%);
+      }
+    }
+  }
+}
+
+img {
+  width: 100%;
 }
 
 .wrapper {
-  padding: 20px;
+  position: relative;
+  z-index: 10;
+  padding: 145px 25px 20px;
   margin-inline: auto;
   max-width: 400px;
+
+  @media (min-width: 100px) {
+    padding-top: 170px;
+  }
 }
 
 .bold {
@@ -33,6 +80,14 @@ body {
 
 .light {
   color: $gray-blue;
+}
+
+.small {
+  font-size: 0.5rem;
+}
+
+.wide {
+  letter-spacing: 2px;
 }
 
 .card {
@@ -45,7 +100,7 @@ body {
   &__header {
     background-image: url("../images/bg-pattern-card.svg");
     position: relative;
-    min-height: 200px;
+    min-height: 140px;
   }
 
   &__image {
@@ -63,15 +118,31 @@ body {
   }
 
   &__info {
-    padding-top: 70px;
-    padding-bottom: 30px;
+    padding-top: 73px;
+    padding-bottom: 25px;
     border-bottom: 1px solid $gray;
+  }
+
+  &__age {
+    margin-left: 4px;
+  }
+
+  &__city {
+    margin-top: 8px;
+    font-size: 0.8rem;
   }
 
   &__stats {
     display: flex;
     justify-content: space-evenly;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 23px 10px 24px;
+    letter-spacing: 1px;
+
+    .column {
+      flex: 0 0 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
   }
 }
